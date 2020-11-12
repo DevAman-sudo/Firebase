@@ -10,6 +10,8 @@
 /* css variables */
 :root {
     --soft-white: #f1f1f1;
+    --main-background: #3B5999;
+    --main-background-gradient: linear-gradient(#44D1A6 , #A94688);
 }
 
 /* html and body tag */
@@ -22,5 +24,23 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: var(--soft-white);
+    background: var(--main-background);
+}
+
+/* form-action */
+.form-control {
+    width: 80vw;
+    height: auto;
+    min-height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* data-store || data store */
+.data-store {
+    width: 80vw;
+    height: auto;
+    min-height: 20vh;
+    background: yellow;
 }
