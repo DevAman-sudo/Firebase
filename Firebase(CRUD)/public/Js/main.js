@@ -26,36 +26,31 @@ database.ref('/CRUD/crud/').on('value', (snapshot) => {
 });
 
 // delete data //
-// database.ref('/CRUD/crud').on((snapshot) => {
-// snapshot.forEach((childSnapshot) => {
-// snapshot.remove();
-// });
+// database.ref('/CRUD/crud/').on((snapshot) => {
+// let data = snapshot.val();
+// data.delete();
 // });
 
 // write function on click //
 function write() {
-    database.ref('/USER/users/').push({
-        data: input.value
-    });
+    database.ref('/USER/users/').push(input.value);
 }
 
 // read data call back function //
 database.ref('/USER/users/').on('value', (snapshot) => {
-    let data ;
-    snapshot.forEach( (childSnapshot) => {
-        data = childSnapshot.val();
-    });
+    let data = snapshot.val();
     for (let key in data) {
         data = data[key];
-        let h2 = document.createElement('h2');
-        h2.innerText = data;
-        formContainer.appendChild(h2);
+        let h1 = document.createElement('h1');
+        h1.innerText = data;
+        formContainer.appendChild(h1);
     }
 });
 
 // listening event of form button
 button.addEventListener('click', (event) => {
-    // prevent Form from sumbitting
-    event.preventDefault();
-    write();
+// prevent Form from sumbitting
+event.preventDefault();
+write();
+input.value = "" ;
 });
