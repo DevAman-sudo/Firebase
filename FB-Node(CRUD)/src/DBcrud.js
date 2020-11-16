@@ -43,6 +43,20 @@ function read() {
 }
 read();
 
+// UPDATE Data //
+function update() {
+    database.ref('/Node/Crud/').child('-MM9cw1R_9VCSEUzoXj8').update({
+        online: "True"
+    });
+}
+update();
+
+// DELETE Data //
+function Delete() {
+    database.ref('/Node/Crud/').child('-MM9dM4slUaBRg3xcPmI').remove();
+}
+// Delete();
+
 // listining on port 8080 //
 app.listen(port, (err, data) => {
     if (err) {
