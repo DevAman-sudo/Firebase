@@ -8,6 +8,22 @@ const hbs = require('hbs');
 const app = express();
 const port = process.env.PORT || 8080 ;
 
+// File Path Decleration //
+const staticPath = path.join( __dirname , '../public');
+
+// using public folder to serve //
+app.use(express.static(staticPath));
+
+// app routing //
+// main page //
+app.get('/' , (req , res) => {
+    res.sendFile('index.html');
+});
+// 404 Error Page //
+app.get('*' , (req , res) => {
+    res.sendFile('404.html');
+});
+
 // listining on port 8080 //
 app.listen( port , (err) => {
     if (err) {
