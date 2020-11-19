@@ -3,7 +3,7 @@ const express = require('express');
 const chalk = require('chalk');
 const path = require('path');
 const hbs = require('hbs');
-var admin = require("firebase-admin");
+const admin = require("firebase-admin");
 
 // App and Port Setup //
 const app = express();
