@@ -2,7 +2,6 @@
 const express = require('express');
 const chalk = require('chalk');
 const path = require('path');
-const fs = require('fs');
 
 // App and port setup //
 const app = express();
@@ -11,28 +10,31 @@ const port = process.env.PORT || 8080 ;
 // file path declaration //
 const staticPath = path.join( __dirname , '../public');
 
+// Setup view engine as hbs //
+app.set('view engine', 'hbs');
+
 // using public dir to serve //
 app.use(express.static(staticPath));
 
 // app routing //
 // main router //
 app.use('/' , (req , res) => {
-    res.sendFile('index.html');
+    res.render('index');
 });
 
-// SignUp Page //
+// SignUp Page // 
 app.use('/signup' , (req , res) => {
-    res.sendFile('SignUp.html');
+    res.render('SignUp');
 });
 
 // LogIn Page //
 app.use('/LogIn' , (req , res) => {
-    res.sendFile('LogIn.html');
+    res.render('LogIn');
 });
 
 // 404 Error page Routing //
 app.get('*' , (req , res) => {
-    res.sendFile('404.html');
+    res.render('404');
 });
 
 // listning on port 8080 //
