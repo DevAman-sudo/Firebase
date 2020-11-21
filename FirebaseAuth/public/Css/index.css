@@ -37,6 +37,7 @@ body {
 
 /* todo image */
 .todo {
+    margin: auto;
     width: 20rem;
     height: 20rem;
     object-fit: cover;
@@ -49,7 +50,7 @@ body {
     border: none;
     border-radius: 1.7rem;
     margin-top: auto;
-    margin-bottom: 3.5rem;
+    margin-bottom: 4rem;
     font-weight: bold;
     font-size: 2rem;
     word-spacing: 0.4rem;
