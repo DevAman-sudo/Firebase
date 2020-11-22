@@ -23,7 +23,7 @@ app.use(express.static(staticPath));
 
 // app routing //
 // main router //
-app.use('/' , (req , res) => {
+app.get('/' , (req , res) => {
     res.render('index');
     // Event on button click //
     event.on('goToSingUp' , () => {
@@ -33,12 +33,12 @@ app.use('/' , (req , res) => {
 });
 
 // SignUp Page // 
-app.use('/signup' , (req , res) => {
+app.get('/signup' , (req , res) => {
     res.render('SignUp');
 });
 
 // LogIn Page //
-app.use('/login' , (req , res) => {
+app.get('/login' , (req , res) => {
     res.render('login');
 });
 

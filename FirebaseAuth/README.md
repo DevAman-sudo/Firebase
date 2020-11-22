@@ -37,13 +37,15 @@ favLanguage("JavaScript");
 
 ```
 
+---
+***
 
-# Project Name => ( "Task Manager" )
+# Project Name => ( "Firebase AUTH" )
 
 - This is The Project that Connect with Firebase Admin SDK ,
-- Using Nodejs , Expressjs , Google Clouds Sevice as (Firebase) ,
-- Project Provides Users to add their own task in Realtime fetching Database ,
-- also in firebase fireStore as in more orginized manner with Authentation .
+- Using Authentication to Store User Email And Login ,
+- Project Recoganized and Fetch the User Info ,
+- Stored in Firebase Realtime Database .
 
 ```javascript 
 console.log('Happy Coding! ');
