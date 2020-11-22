@@ -2,6 +2,9 @@
 const express = require('express');
 const chalk = require('chalk');
 const path = require('path');
+const EventEmitter = require('events');
+const io = require('socket.io');
+const event = new EventEmitter();
 
 // App and port setup //
 const app = express();
@@ -20,6 +23,11 @@ app.use(express.static(staticPath));
 // main router //
 app.use('/' , (req , res) => {
     res.render('index');
+    // Event on button click //
+    event.on('goToSingUp' , () => {
+        console.log('hell9 world');
+    });
+    event.emit('goToSingUp');
 });
 
 // SignUp Page // 
