@@ -4,6 +4,8 @@ const chalk = require('chalk');
 const path = require('path');
 const EventEmitter = require('events');
 const io = require('socket.io');
+const fs = require('fs');
+const admin = require("firebase-admin");
 const event = new EventEmitter();
 
 // App and port setup //
@@ -25,7 +27,7 @@ app.use('/' , (req , res) => {
     res.render('index');
     // Event on button click //
     event.on('goToSingUp' , () => {
-        console.log('hell9 world');
+        // console.log('hell9 world');
     });
     event.emit('goToSingUp');
 });
@@ -36,8 +38,8 @@ app.use('/signup' , (req , res) => {
 });
 
 // LogIn Page //
-app.use('/LogIn' , (req , res) => {
-    res.render('LogIn');
+app.use('/login' , (req , res) => {
+    res.render('login');
 });
 
 // 404 Error page Routing //
