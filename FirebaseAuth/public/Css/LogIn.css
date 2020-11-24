@@ -13,7 +13,7 @@
 }
 
 /* body and html */
-html { font-size: 62.5rem; }
+html { font-size: 62.5%; }
 body {
     width: 100%;
     height: auto;
@@ -22,4 +22,55 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+}
+
+
+/* page head */
+.head {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 1rem;
+    word-spacing: 0.3rem;
+    letter-spacing: 0.1rem;
+}
+
+/* SignUp Form */
+.form {
+    width: 100%;
+    height: auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* SignUp Form Input Field */
+.inputField {
+    width: 100%;
+    margin: 1rem;
+    padding: 1rem;
+    border: none;
+    border-radius: 1rem;
+    font-weight: bold;
+    word-spacing: 0.2rem;
+    letter-spacing: 0.1rem;
+}
+.inputField:focus {
+    outline: 0;
+}
+
+/* SignUp Form Button */
+.form .button {
+    margin: 1rem auto;
+    padding: 1rem 1.5rem;
+    background: #fff;
+    border-radius: 1.2rem;
+    border: none;
+}
+.form .button:focus {
+    outline: 0;
+}
+.form .button:active {
+    padding: 0.7rem 1.2rem;
 }
