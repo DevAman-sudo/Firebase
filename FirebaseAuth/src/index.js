@@ -1,16 +1,17 @@
 // npm packages //
 const express = require('express');
+const app = express();
+const http = require('http').createServer(app);
 const chalk = require('chalk');
 const path = require('path');
+const io = require('socket.io')(http);
 const EventEmitter = require('events');
-const io = require('socket.io');
-const socket = require('socket.io-client')('http://127.0.0.1:8080');
+const hbs = require('hbs');
 const fs = require('fs');
 const admin = require("firebase-admin");
-const event = new EventEmitter();
 
 // App and port setup //
-const app = express();
+// const event = new EventEmitter();
 const port = process.env.PORT || 8080;
 
 // file path declaration //
@@ -25,19 +26,12 @@ app.use(express.static(staticPath));
 // app routing //
 // main router //
 app.get('/', (req, res) => {
-    res.render('index');
-    // Event on button click //
-    socket.on('hello' , () => {
-        console.log('hello world');
-    });
+    res.sendFile( path.join(staticPath , '/index.html'));
 });
-// event.on('hello', () => {
-    // console.log('hell9 world');
-// });
 
 // SignUp Page //
 app.get('/signup', (req, res) => {
-    res.render('SignUp');
+    res.sendFile( path.join(staticPath , '/SignUp.html'));
 });
 
 // LogIn Page //
@@ -50,8 +44,16 @@ app.get('*', (req, res) => {
     res.render('404');
 });
 
+// SOCKET.IO WebSocket Connection //
+// Event on button click //
+io.on('connection', (socket) => {
+    socket.on('hello' , () => {
+        console.log('hello user');
+    });
+});
+
 // listning on port 8080 //
-app.listen(port, (err) => {
+http.listen(port, (err) => {
     if (err) {
         console.log(chalk.blue.bgRed.bold(`Error Found: ${err}`));
     } else {

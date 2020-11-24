@@ -1,13 +1,17 @@
-// javascript DOM property of index.hbs 
+// javascript DOM property of index.hbs
 const button = document.getElementById('button');
-const body = document.querySelector('.main-container');
 
 // Socket connection from clint to server //
-const socket = io('http://localhost');
+const socket = io();
 
 // Clicked function for click event //
 function clicked() {
-    body.style.background = "red" ;
+    socket.emit('hello');
 }
-// Click event on button 
-button.addEventListener('click' , clicked);
+// Function to change route on button click //
+function clickFun() {
+    window.location = '/signup';
+}
+
+// Click event on button
+button.addEventListener('click', clicked);
