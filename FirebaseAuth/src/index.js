@@ -36,7 +36,7 @@ app.get('/signup', (req, res) => {
 
 // LogIn Page //
 app.get('/login', (req, res) => {
-    res.render('login');
+    res.sendFile( path.join( staticPath , '/LogIn.html'));
 });
 
 // 404 Error page Routing //

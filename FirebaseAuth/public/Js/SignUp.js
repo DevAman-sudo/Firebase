@@ -1,15 +1,20 @@
 // SignUp page  DOM element //
 const button = document.getElementById('button');
 
+// SignUp function //
+function logIn() {
+    window.location = '/login' ;
+}
+
 // clicked function //
 function clicked() {
     button.style.backgroundColor = "#000" ;
 }
 
 // Listining Event on Button Click //
-button.addEventListener('submit' , (event) => {
+button.addEventListener('submit' , (e) => {
     // Preventing Page on Submit //
-    event.preventDeafult();
+    e.preventDeafult();
     // function on button click //
     clicked();
 });

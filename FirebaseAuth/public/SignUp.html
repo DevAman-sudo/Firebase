@@ -1,28 +1,40 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-        <meta name="viewport" content="width=device-width initial-scale=1.0">
-        <!-- local css files -->
-        <link rel="stylesheet" href="/Css/SignUp.css" />
-        <!-- page title and favicon -->
-        <title>Sign In</title>
-    </head>
-    <body>
-        <!-- Heading -->
-        <h2 class="head" id="head"> Sign Up </h2>
-        
-        <!-- Sign Up Form -->
-        <form class="form" id="form" action="" method="get" accept-charset="utf-8">
-            <!-- Input Fields -->
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <!-- local css files -->
+    <link rel="stylesheet" href="/Css/SignUp.css" />
+    <!-- page title and favicon -->
+    <title>Sign In</title>
+</head>
+<body>
+    <!-- Heading -->
+    <h2 class="head" id="head"> Sign Up </h2>
+
+    <!-- Sign Up Form -->
+    <form class="form" id="form" action="" method="get" accept-charset="utf-8">
+        <!-- Input Fields -->
+        <div class="msg-input">
             <input class="inputField" autocomplete="off" type="text" name="username" id="username" placeholder="Username" />
+            <small class="error">Hello World</small>
+        </div>
+        <div class="msg-input">
             <input class="inputField" autocomplete="off" type="email" name="email" id="email" placeholder="User Email" />
+            <small class="error">Hello World</small>
+        </div>
+        <div class="msg-input">
             <input class="inputField" autocomplete="off" type="password" name="password" id="password" placeholder="User Password" />
-            <!-- Submit Button -->
-            <button type="submit" class="button" id="button">Submit</button>
-        </form>
-        
-        <!-- local javascript files --> 
-        <script src="/Js/SignUp.js" type="text/javascript" charset="utf-8"></script>
-    </body>
+            <small class="error">Hello World</small>
+        </div>
+        <!-- Submit Button -->
+        <div class="btn-container">
+            <input type="button" name="button" class="button" id="button" value="submit" />
+            <input type="button" name="button" class="button" id="logIn" value="Log In" onclick="logIn()" />
+        </div>
+    </form>
+
+    <!-- local javascript files -->
+    <script src="/Js/SignUp.js" type="text/javascript" charset="utf-8"></script>
+</body>
 </html>
