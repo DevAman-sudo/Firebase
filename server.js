@@ -8,7 +8,7 @@ const admin = require("firebase-admin");
 
 // Files Path Variables //
 const staticPath = path.join( __dirname , '/public/');
-var serviceAccount = require("admin.json");
+const serviceAccount = path.join( __dirname , "admin.json");
 
 // Using App And Port SetUp //
 const port = process.env.PORT || 8080 ;
