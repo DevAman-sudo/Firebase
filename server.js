@@ -4,13 +4,21 @@ const app = express();
 const server = require('http').createServer(app);
 const path = require('path');
 const chalk = require('chalk');
+const admin = require("firebase-admin");
 
 // Files Path Variables //
 const staticPath = path.join( __dirname , '/public/');
+var serviceAccount = require("admin.json");
 
 // Using App And Port SetUp //
 const port = process.env.PORT || 8080 ;
 app.use( express.static( staticPath));
+
+// Firebase Service Account || App Installization //
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+  databaseURL: "https://devaman-firebase-default-rtdb.firebaseio.com"
+});
 
 // Express App Router SetUp //
 app.get('/' , (req , res) => {

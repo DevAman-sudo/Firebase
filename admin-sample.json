@@ -1,0 +1,14 @@
+// Note => You Can Get Your Own Key From Firebase Console // Firebase Project //
+// ----> You Can Replace This File To Your Own Generated Key File And Renamed it => admin.json //
+{
+  "type": "service_account",
+  "project_id": "Your Project Id",
+  "private_key_id": "Your private_key_id",
+  "private_key": "-----BEGIN PRIVATE KEY-----\n==\n-----END PRIVATE KEY-----\n",
+  "client_email": "Your client_email",
+  "client_id": "Your client_id",
+  "auth_uri": "Your auth_uri",
+  "token_uri": "Your token_uri",
+  "auth_provider_x509_cert_url": "Your auth_provider_x509_cert_url",
+  "client_x509_cert_url": "Your client_x509_cert_url"
+}
